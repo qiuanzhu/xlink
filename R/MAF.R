@@ -6,6 +6,7 @@
 #' @param gender gender vairable.
 #' @param male male information.
 #' @param MAF_v minimum MAF value.
+#' @param data a dataset.
 MAF <- function(snp, gender, male, MAF_v, data) {
     data <- stats::na.omit(data[, which(colnames(data) %in% c(snp, gender))])
     n <- length(data$snp)

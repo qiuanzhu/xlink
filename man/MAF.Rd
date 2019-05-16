@@ -14,6 +14,8 @@ MAF(snp, gender, male, MAF_v, data)
 \item{male}{male information.}
 
 \item{MAF_v}{minimum MAF value.}
+
+\item{data}{a dataset.}
 }
 \description{
 \code{MAF} returns SNPs with higher MAF than default value.

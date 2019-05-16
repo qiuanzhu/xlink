@@ -13,6 +13,8 @@ infor_table(x, snp, covar_n, MAF_value, model)
 
 \item{covar_n}{Covariate names.}
 
+\item{MAF_value}{A minimum value of minor allele frequency.}
+
 \item{model}{Model type.}
 }
 \value{

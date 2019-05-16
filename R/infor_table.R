@@ -5,6 +5,7 @@
 #' @param x An output from continuous/binary/survival model.
 #' @param snp Single SNP name.
 #' @param covar_n Covariate names.
+#' @param MAF_value A minimum value of minor allele frequency.
 #' @param model Model type.
 #' @return Information table. If linear or binary model is chosen, it returns estimated coefficients, 
 #' confidence interval and P value. If survival model is chosen, it returns hazard ratio, confidence interval and P value.

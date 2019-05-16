@@ -14,6 +14,8 @@
 #' @param data Data set. 
 #' @return It returns estimated parameters, confidence interval and P value for each variable. Baseline model and full model maximum likelihood estimation are provided. 
 #' @seealso \code{\link{lm}{stats}} for linear model, \code{\link{glm}{stats}} for logistic regression model, and \code{\link{coxph}{survival}} for survival model.
+#' @import  survival
+#' @import  stats
 fit_XCI_model <- function(resp, os, ostime, snp, gender, male, female, covars, model, data) {
     
     MAF_value <- MAF(snp = snp, gender = gender, male = male, MAF_v = 0, data = data)[2]
