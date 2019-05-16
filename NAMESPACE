@@ -2,4 +2,4 @@
 
 export(select_output)
 export(xlink_fit)
-importFrom(survival,coxph)
+import(survival)
