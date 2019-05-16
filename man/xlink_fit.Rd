@@ -6,7 +6,7 @@
 \usage{
 xlink_fit(resp = c(), os = c(), ostime = c(), snps = c(),
   gender = c(), covars = c(), option = c(type = c(), male = c(),
-  female = c()), model = c(), data)
+  female = c(), MAF_v = c()), model = c(), data)
 }
 \arguments{
 \item{resp}{Response variable for continuous or binary model fitting.}
@@ -34,7 +34,7 @@ It returns estimated parameters, confidence interval and P value for each variab
 \code{xlink_fit} returns model fitting results for each SNP with the covariates.
 }
 \references{
-Xu, Wei, and Meiling Hao. "A unified partial likelihood approach for X-chromosome association on time-to-event outcomes." Genetic epidemiology 42.1 (2018): 80-94.
+Xu, Wei, and Meiling Hao. 'A unified partial likelihood approach for X-chromosome association on time-to-event outcomes.' Genetic epidemiology 42.1 (2018): 80-94.
 }
 \seealso{
 \code{\link{lm}{stats}} for linear model, \code{\link{glm}{stats}} for logistic regression model, and \code{\link{coxph}{survival}} for survival model.

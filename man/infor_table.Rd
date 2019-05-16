@@ -4,7 +4,7 @@
 \alias{infor_table}
 \title{Information table.}
 \usage{
-infor_table(x, snp, covar_n, model)
+infor_table(x, snp, covar_n, MAF_value, model)
 }
 \arguments{
 \item{x}{An output from continuous/binary/survival model.}
