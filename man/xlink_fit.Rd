@@ -34,7 +34,6 @@ It returns estimated parameters, confidence interval and P value for each variab
 \code{xlink_fit} returns model fitting results for each SNP with the covariates.
 }
 \examples{
-data(Rdata)
 Covars<-c("Age","Smoking","Treatment")
 SNPs<-c("snp_1","snp_2","snp_3")
 xlink_fit(os="OS",ostime="OS_time",snps=SNPs,gender="gender",covars=Covars,option =list(MAF_v=0.05),model="survival",data = Rdata)

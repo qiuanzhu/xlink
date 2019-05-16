@@ -13,7 +13,6 @@
 #' @param data Data set. 
 #' @return It returns estimated parameters, confidence interval and P value for each variable in the chosen model. The baseline and full model maximum likelihood estimation are provided. If type is 'all', best model choice is provided by using AIC as an benchmark. 
 #' @examples
-#' data(Rdata)
 #' Covars<-c("Age","Smoking","Treatment")
 #' SNPs<-c("snp_1","snp_2","snp_3")
 #' xlink_fit(os="OS",ostime="OS_time",snps=SNPs,gender="gender",covars=Covars,option =list(MAF_v=0.05),model="survival",data = Rdata)

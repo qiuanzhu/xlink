@@ -6,7 +6,6 @@
 #' @param pv_thold P value threshold for output.
 #' @return It returns estimated parameters, confidence interval, P value, MAF and Best model information. 
 #' @examples
-#' data(Rdata)
 #' Covars<-c("Age","Smoking","Treatment")
 #' SNPs<-c("snp_1","snp_2","snp_3")
 #' result<-xlink_fit(os="OS",ostime ="OS_time",snps=SNPs,gender ="gender",covars=Covars, option =list(type="all",MAF_v=0.05) ,model="survival", data = Rdata)

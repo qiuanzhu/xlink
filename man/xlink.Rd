@@ -14,7 +14,7 @@ all of the potential biological processes.
 }
 \section{xlink functions}{
 
-xlink_fit, fit_all_models,fit_XCI_model,fit_XCI_E_model.
+xlink_fit, select_output.
 }
 
 \references{
