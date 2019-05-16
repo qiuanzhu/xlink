@@ -13,10 +13,10 @@
 #' @param data Data set. 
 #' @return It returns estimated parameters, confidence interval and P value for each variable in the chosen model. The baseline and full model maximum likelihood estimation are provided. If type is 'all', best model choice is provided by using AIC as an benchmark. 
 #' @seealso \code{\link{lm}{stats}} for linear model, \code{\link{glm}{stats}} for logistic regression model, and \code{\link{coxph}{survival}} for survival model.
-#' @references Xu, Wei, and Meiling Hao. "A unified partial likelihood approach for X-chromosome association on time-to-event outcomes." Genetic epidemiology 42.1 (2018): 80-94.
+#' @references Xu, Wei, and Meiling Hao. 'A unified partial likelihood approach for X-chromosome association on time-to-event outcomes.' Genetic epidemiology 42.1 (2018): 80-94.
 #' @export
-xlink_fit <- function(resp = c(), os = c(), ostime = c(), snps = c(), gender = c(), covars = c(), option = c(type = c(), 
-    male = c(), female = c(), MAF_v=c()), model = c(), data) {
+xlink_fit <- function(resp = c(), os = c(), ostime = c(), snps = c(), gender = c(), covars = c(), option = c(type = c(), male = c(), female = c(), MAF_v = c()), 
+    model = c(), data) {
     
     if (length(model) == 0) {
         stop("Model type needed.")
@@ -63,43 +63,40 @@ xlink_fit <- function(resp = c(), os = c(), ostime = c(), snps = c(), gender = c
     }
     
     MAF_select <- function(x) {
-       T <- MAF(snp=x, gender=gender, male=male, MAF_v=option$MAF_v, data=data)
-       return(T)
-    }   
+        T <- MAF(snp = x, gender = gender, male = male, MAF_v = option$MAF_v, data = data)
+        return(T)
+    }
     
     infor_all <- function(x) {
-        T <- fit_all_models(resp = resp, os = os, ostime = ostime, snp = x, gender = gender, male = male, female = female, 
-            covars = covars, model = model, data = data)
+        T <- fit_all_models(resp = resp, os = os, ostime = ostime, snp = x, gender = gender, male = male, female = female, covars = covars, model = model, data = data)
         return(T)
     }
     
     infor_XCI <- function(x) {
-        T <- fit_XCI_model(resp = resp, os = os, ostime = ostime, snp = x, gender = gender, male = male, female = female, 
-            covars = covars, model = model, data = data)
+        T <- fit_XCI_model(resp = resp, os = os, ostime = ostime, snp = x, gender = gender, male = male, female = female, covars = covars, model = model, data = data)
         return(T)
     }
     
     infor_XCI_E <- function(x) {
-        T <- fit_XCI_E_model(resp = resp, os = os, ostime = ostime, snp = x, gender = gender, male = male, female = female,
-            covars = covars, model = model, data = data)
+        T <- fit_XCI_E_model(resp = resp, os = os, ostime = ostime, snp = x, gender = gender, male = male, female = female, covars = covars, model = model, data = data)
         return(T)
     }
     
-    infor_snp<-unlist(lapply(snps, MAF_select))
-    snp_select<-infor_snp[(1:length(infor_snp)%%2==1)]
-    snp_select_MAF<-as.numeric(infor_snp[(1:length(infor_snp)%%2==0)])
-      
+    infor_snp <- unlist(lapply(snps, MAF_select))
+    snp_select <- infor_snp[(1:length(infor_snp)%%2 == 1)]
+    snp_select_MAF <- as.numeric(infor_snp[(1:length(infor_snp)%%2 == 0)])
+    
     
     if (modeltype == "all") {
-        results <- base::lapply(snp_select,infor_all)
+        results <- base::lapply(snp_select, infor_all)
     }
     
     if (modeltype == "XCI") {
-        results <- base::lapply(snp_select,infor_XCI )
+        results <- base::lapply(snp_select, infor_XCI)
     }
     
     if (modeltype == "XCI-E") {
-        results <- base::lapply(snp_select,infor_XCI_E)
+        results <- base::lapply(snp_select, infor_XCI_E)
     }
     
     names(results) <- snp_select

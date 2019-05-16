@@ -16,7 +16,7 @@ infor_table <- function(x, snp, covar_n, MAF_value, model) {
         CI_low <- round(exp(x[, 1] - 1.96 * x[, 3]), 4)
         hz <- round(x[, 2], 4)
         pv <- x[, 5]
-        MAF_c<-c(MAF_value,rep("NA",length(covar_n)-1))
+        MAF_c <- c(MAF_value, rep("NA", length(covar_n) - 1))
         CI <- paste("[", CI_low, ",", CI_up, "]", sep = "")
         Table <- cbind(hz, as.data.frame(CI), pv, MAF_c)
         rownames(Table) <- covar_n
@@ -30,7 +30,7 @@ infor_table <- function(x, snp, covar_n, MAF_value, model) {
         CI_low <- round((x[, 1] - 1.96 * x[, 2]), 4)
         es <- round(x[, 1], 4)
         pv <- x[, 4]
-        MAF_c<-c("NA", MAF_value,rep("NA",length(covar_n)-2))
+        MAF_c <- c("NA", MAF_value, rep("NA", length(covar_n) - 2))
         CI <- paste("[", CI_low, ",", CI_up, "]", sep = "")
         Table <- cbind(es, as.data.frame(CI), pv, MAF_c)
         rownames(Table) <- covar_n

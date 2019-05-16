@@ -16,7 +16,7 @@
 #' @seealso \code{\link{lm}{stats}} for linear model, \code{\link{glm}{stats}} for logistic regression model, and \code{\link{coxph}{survival}} for survival model.
 fit_all_models <- function(resp, os, ostime, snp, gender, male, female, covars, model, data) {
     
-    MAF_value<-MAF(snp=snp, gender=gender, male=male, MAF_v=0, data=data)[2]
+    MAF_value <- MAF(snp = snp, gender = gender, male = male, MAF_v = 0, data = data)[2]
     
     if (model == "survival") {
         var_list <- c(os, ostime, snp, gender, covars)
@@ -98,8 +98,8 @@ fit_all_models <- function(resp, os, ostime, snp, gender, male, female, covars, 
         }
         
         model_ch <- c("XCI-S")
-        model_ind <- ((LR_a - 2) > (LR_s - 3) && (LR_a > LR_g)) + 2 * ((LR_g - 2) > (LR_s - 3) && (LR_g > LR_a)) + 
-            3 * ((LR_a == LR_g) && (LR_g - 2) > (LR_s - 3))
+        model_ind <- ((LR_a - 2) > (LR_s - 3) && (LR_a > LR_g)) + 2 * ((LR_g - 2) > (LR_s - 3) && (LR_g > LR_a)) + 3 * ((LR_a == LR_g) && (LR_g - 2) > (LR_s - 
+            3))
         
         if (model_ind == 1) {
             model_ch <- model_list[2]
@@ -113,20 +113,17 @@ fit_all_models <- function(resp, os, ostime, snp, gender, male, female, covars, 
             model_ch <- c("XCI")
         }
         
-        infor_g <- infor_table(x = summary(Model_g)$coefficients, snp = snp, covar_n = rownames(summary(Model_g)$coefficients),  MAF_value=MAF_value,
-            model)
+        infor_g <- infor_table(x = summary(Model_g)$coefficients, snp = snp, covar_n = rownames(summary(Model_g)$coefficients), MAF_value = MAF_value, model)
         loglik_infor <- t(c(Model_bl$loglik[2], Model_g$loglik[2], LR_g))
         colnames(loglik_infor) <- c("Baseline", "Full model", "Loglik ratio")
         mylist_g <- list(coefficients = infor_g, loglik = loglik_infor)
         
-        infor_a <- infor_table(x = summary(Model_a)$coefficients, snp = snp, covar_n = rownames(summary(Model_a)$coefficients),  MAF_value=MAF_value,
-            model)
+        infor_a <- infor_table(x = summary(Model_a)$coefficients, snp = snp, covar_n = rownames(summary(Model_a)$coefficients), MAF_value = MAF_value, model)
         loglik_infor <- t(c(Model_bl$loglik[2], Model_a$loglik[2], LR_a))
         colnames(loglik_infor) <- c("Baseline", "Full model", "Loglik ratio")
         mylist_a <- list(coefficients = infor_a, loglik = loglik_infor)
         
-        infor_s <- infor_table(x = summary(Model_s)$coefficients, snp = snp, covar_n = rownames(summary(Model_s)$coefficients),  MAF_value=MAF_value,
-            model)
+        infor_s <- infor_table(x = summary(Model_s)$coefficients, snp = snp, covar_n = rownames(summary(Model_s)$coefficients), MAF_value = MAF_value, model)
         loglik_infor <- t(c(Model_bl$loglik[2], Model_s$loglik[2], LR_s))
         colnames(loglik_infor) <- c("Baseline", "Full model", "Loglik ratio")
         mylist_s <- list(coefficients = infor_s, loglik = loglik_infor, Gamma = gamma)
@@ -216,8 +213,8 @@ fit_all_models <- function(resp, os, ostime, snp, gender, male, female, covars, 
         }
         
         model_ch <- c("XCI-S")
-        model_ind <- ((LR_a - 2) > (LR_s - 3) && (LR_a > LR_g)) + 2 * ((LR_g - 2) > (LR_s - 3) && (LR_g > LR_a)) + 
-            3 * ((LR_a == LR_g) && (LR_g - 2) > (LR_s - 3))
+        model_ind <- ((LR_a - 2) > (LR_s - 3) && (LR_a > LR_g)) + 2 * ((LR_g - 2) > (LR_s - 3) && (LR_g > LR_a)) + 3 * ((LR_a == LR_g) && (LR_g - 2) > (LR_s - 
+            3))
         
         if (model_ind == 1) {
             model_ch <- model_list[2]
@@ -231,20 +228,17 @@ fit_all_models <- function(resp, os, ostime, snp, gender, male, female, covars, 
             model_ch <- c("XCI")
         }
         
-        infor_g <- infor_table(x = summary(Model_g)$coefficients, snp = snp, covar_n = rownames(summary(Model_g)$coefficients),  MAF_value=MAF_value,
-            model)
+        infor_g <- infor_table(x = summary(Model_g)$coefficients, snp = snp, covar_n = rownames(summary(Model_g)$coefficients), MAF_value = MAF_value, model)
         loglik_infor <- t(c(stats::logLik(Model_bl), stats::logLik(Model_g), LR_g))
         colnames(loglik_infor) <- c("Baseline", "Full model", "Loglik ratio")
         mylist_g <- list(coefficients = infor_g, loglik = loglik_infor)
         
-        infor_a <- infor_table(x = summary(Model_a)$coefficients, snp = snp, covar_n = rownames(summary(Model_a)$coefficients),  MAF_value=MAF_value,
-            model)
+        infor_a <- infor_table(x = summary(Model_a)$coefficients, snp = snp, covar_n = rownames(summary(Model_a)$coefficients), MAF_value = MAF_value, model)
         loglik_infor <- t(c(stats::logLik(Model_bl), stats::logLik(Model_a), LR_a))
         colnames(loglik_infor) <- c("Baseline", "Full model", "Loglik ratio")
         mylist_a <- list(coefficients = infor_a, loglik = loglik_infor)
         
-        infor_s <- infor_table(x = summary(Model_s)$coefficients, snp = snp, covar_n = rownames(summary(Model_s)$coefficients),  MAF_value=MAF_value,
-            model)
+        infor_s <- infor_table(x = summary(Model_s)$coefficients, snp = snp, covar_n = rownames(summary(Model_s)$coefficients), MAF_value = MAF_value, model)
         loglik_infor <- t(c(stats::logLik(Model_bl), stats::logLik(Model_s), LR_s))
         colnames(loglik_infor) <- c("Baseline", "Full model", "Loglik ratio")
         mylist_s <- list(coefficients = infor_s, loglik = loglik_infor, Gamma = gamma)
@@ -335,8 +329,8 @@ fit_all_models <- function(resp, os, ostime, snp, gender, male, female, covars, 
         }
         
         model_ch <- c("XCI-S")
-        model_ind <- ((LR_a - 2) > (LR_s - 3) && (LR_a > LR_g)) + 2 * ((LR_g - 2) > (LR_s - 3) && (LR_g > LR_a)) + 
-            3 * ((LR_a == LR_g) && (LR_g - 2) > (LR_s - 3))
+        model_ind <- ((LR_a - 2) > (LR_s - 3) && (LR_a > LR_g)) + 2 * ((LR_g - 2) > (LR_s - 3) && (LR_g > LR_a)) + 3 * ((LR_a == LR_g) && (LR_g - 2) > (LR_s - 
+            3))
         
         if (model_ind == 1) {
             model_ch <- model_list[2]
@@ -350,20 +344,17 @@ fit_all_models <- function(resp, os, ostime, snp, gender, male, female, covars, 
             model_ch <- c("XCI")
         }
         
-        infor_g <- infor_table(x = summary(Model_g)$coefficient, snp = snp, covar_n = rownames(summary(Model_g)$coefficient),  MAF_value=MAF_value,
-            model)
+        infor_g <- infor_table(x = summary(Model_g)$coefficient, snp = snp, covar_n = rownames(summary(Model_g)$coefficient), MAF_value = MAF_value, model)
         loglik_infor <- t(c(stats::logLik(Model_bl), stats::logLik(Model_g), LR_g))
         colnames(loglik_infor) <- c("Baseline", "Full model", "Loglik ratio")
         mylist_g <- list(coefficients = infor_g, loglik = loglik_infor)
         
-        infor_a <- infor_table(x = summary(Model_a)$coefficient, snp = snp, covar_n = rownames(summary(Model_a)$coefficient),  MAF_value=MAF_value,
-            model)
+        infor_a <- infor_table(x = summary(Model_a)$coefficient, snp = snp, covar_n = rownames(summary(Model_a)$coefficient), MAF_value = MAF_value, model)
         loglik_infor <- t(c(stats::logLik(Model_bl), stats::logLik(Model_a), LR_a))
         colnames(loglik_infor) <- c("Baseline", "Full model", "Loglik ratio")
         mylist_a <- list(coefficients = infor_a, loglik = loglik_infor)
         
-        infor_s <- infor_table(x = summary(Model_s)$coefficient, snp = snp, covar_n = rownames(summary(Model_s)$coefficient),  MAF_value=MAF_value,
-            model)
+        infor_s <- infor_table(x = summary(Model_s)$coefficient, snp = snp, covar_n = rownames(summary(Model_s)$coefficient), MAF_value = MAF_value, model)
         loglik_infor <- t(c(stats::logLik(Model_bl), stats::logLik(Model_s), LR_s))
         colnames(loglik_infor) <- c("Baseline", "Full model", "Loglik ratio")
         mylist_s <- list(coefficients = infor_s, loglik = loglik_infor, Gamma = gamma)

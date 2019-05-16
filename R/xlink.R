@@ -12,5 +12,5 @@
 #'
 #' @docType package
 #' @name xlink
-#' @references Xu, Wei, and Meiling Hao. "A unified partial likelihood approach for X-chromosome association on time-to-event outcomes." Genetic epidemiology 42.1 (2018): 80-94.
+#' @references Xu, Wei, and Meiling Hao. 'A unified partial likelihood approach for X-chromosome association on time-to-event outcomes.' Genetic epidemiology 42.1 (2018): 80-94.
 NULL
