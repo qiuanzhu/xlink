@@ -1,6 +1,4 @@
 # xlink
-Genetic association models for X-chromosome SNPS on continuous, binary and survival outcomes
-Abstract
 The expression of X-chromosome undergoes three possible biological processes: Xchromosome
 inactivation (XCI), escape of the X-chromosome inactivation (XCI-E),
 and skewed X-chromosome inactivation (XCI-S). Although these expressions are
