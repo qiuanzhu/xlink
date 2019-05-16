@@ -80,7 +80,7 @@ xlink_fit <- function(resp = c(), os = c(), ostime = c(), snps = c(), gender = c
     }
     
     infor_XCI_E <- function(x) {
-        T <- fit_XCI_E_model(resp = resp, os = os, ostime = ostime, snp = x, gender = gender, male = male, female = female, 
+        T <- fit_XCI_E_model(resp = resp, os = os, ostime = ostime, snp = x, gender = gender, male = male, female = female,
             covars = covars, model = model, data = data)
         return(T)
     }
@@ -99,7 +99,7 @@ xlink_fit <- function(resp = c(), os = c(), ostime = c(), snps = c(), gender = c
     }
     
     if (modeltype == "XCI-E") {
-        results <- base::lapply( snp_select,infor_XCI_E)
+        results <- base::lapply(snp_select,infor_XCI_E)
     }
     
     names(results) <- snp_select

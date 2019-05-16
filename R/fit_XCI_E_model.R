@@ -16,6 +16,8 @@
 #' @seealso \code{\link{lm}{stats}} for linear model, \code{\link{glm}{stats}} for logistic regression model, and \code{\link{coxph}{survival}} for survival model.
 fit_XCI_E_model <- function(resp, os, ostime, snp, gender, male, female, covars, model, data) {
     
+    MAF_value<-MAF(snp=snp, gender=gender, male=male, MAF_v=0, data=data)[2]
+    
     if (model == "survival") {
         var_list <- c(os, ostime, snp, gender, covars)
         var_n <- length(var_list)
@@ -53,7 +55,7 @@ fit_XCI_E_model <- function(resp, os, ostime, snp, gender, male, female, covars,
         
         LR_AIC <- Model$loglik[2] - Model_bl$loglik[2]
         
-        infor <- infor_table(x = summary(Model)$coefficients, snp = snp, covar_n = rownames(summary(Model)$coefficients), 
+        infor <- infor_table(x = summary(Model)$coefficients, snp = snp, covar_n = rownames(summary(Model)$coefficients), MAF_value=MAF_value,
             model)
         
         loglik_infor <- t(c(Model_bl$loglik[2], Model$loglik[2], LR_AIC))
@@ -102,7 +104,7 @@ fit_XCI_E_model <- function(resp, os, ostime, snp, gender, male, female, covars,
         
         LR_AIC <- stats::logLik(Model) - stats::logLik(Model_bl)
         
-        infor <- infor_table(x = summary(Model)$coefficients, snp = snp, covar_n = rownames(summary(Model)$coefficients), 
+        infor <- infor_table(x = summary(Model)$coefficients, snp = snp, covar_n = rownames(summary(Model)$coefficients), MAF_value=MAF_value,
             model)
         
         loglik_infor <- t(c(stats::logLik(Model_bl), stats::logLik(Model), LR_AIC))
@@ -152,7 +154,7 @@ fit_XCI_E_model <- function(resp, os, ostime, snp, gender, male, female, covars,
         
         LR_AIC <- stats::logLik(Model) - stats::logLik(Model_bl)
         
-        infor <- infor_table(x = summary(Model)$coefficient, snp = snp, covar_n = rownames(summary(Model)$coefficient), 
+        infor <- infor_table(x = summary(Model)$coefficient, snp = snp, covar_n = rownames(summary(Model)$coefficient), MAF_value=MAF_value,
             model)
         
         loglik_infor <- t(c(stats::logLik(Model_bl), stats::logLik(Model), LR_AIC))
