@@ -18,7 +18,7 @@
 #' @importFrom survival coxph
 xlink_fit <- function(resp = c(), os = c(), ostime = c(), snps = c(), gender = c(), covars = c(), option = c(type = c(), male = c(), female = c(), MAF_v = c()), 
     model = c(), data) {
-    requireNamespace()
+    requireNamespace(survival)
     if (length(model) == 0) {
         stop("Model type needed.")
     } else if (model == "survival") {
