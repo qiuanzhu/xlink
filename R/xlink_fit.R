@@ -15,9 +15,10 @@
 #' @seealso \code{\link{lm}{stats}} for linear model, \code{\link{glm}{stats}} for logistic regression model, and \code{\link{coxph}{survival}} for survival model.
 #' @references Xu, Wei, and Meiling Hao. 'A unified partial likelihood approach for X-chromosome association on time-to-event outcomes.' Genetic epidemiology 42.1 (2018): 80-94.
 #' @export
+#' @importFrom survival coxph
 xlink_fit <- function(resp = c(), os = c(), ostime = c(), snps = c(), gender = c(), covars = c(), option = c(type = c(), male = c(), female = c(), MAF_v = c()), 
     model = c(), data) {
-    
+    requireNamespace()
     if (length(model) == 0) {
         stop("Model type needed.")
     } else if (model == "survival") {
