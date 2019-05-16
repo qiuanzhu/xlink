@@ -2,4 +2,5 @@
 
 export(select_output)
 export(xlink_fit)
+import(stats)
 import(survival)

@@ -1,3 +1,5 @@
+^Meta$
+^doc$
 ^data-raw$
-^pk1\.Rproj$
+^xlink.Rproj$
 ^\.Rproj\.user$
