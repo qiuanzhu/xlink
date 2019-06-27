@@ -9,7 +9,7 @@ output:
      rmarkdown::html_vignette:
      toc: yes
 vignette: >
-  %\VignetteIndexEntry{Vignette Title}
+  %\VignetteIndexEntry{An Introduction to xlink}
   %\VignetteEngine{knitr::rmarkdown}
   %\VignetteEncoding{UTF-8}
 ---
@@ -41,11 +41,11 @@ install_github("qiuanzhu/xlink")
 #3. Examples
 
 
-In the following examples, we choose the **model** is "survival" model, which could also applied to "linear" model for coutinous response and "binary" for fitting logistic regression model.
+In the following examples, we choose the **model** is "survival" model, which could also applied to "linear" model for continuous response and "binary" for fitting logistic regression model.
 
 
 ## 3.1 Select significant SNPs from XCI or XCI-E model type:
-In the sample data with 10 SNPs and 4 clinlic covariates, 
+In the sample data with 10 SNPs and 4 clinic covariates, 
 ```{r eval=FALSE}
 library("xlink")
 head(Rdata)
@@ -58,7 +58,7 @@ library(xlink)
 knitr::kable(head(Rdata))
 ```
 
-If the Model type is chosen to be **XCI** and threshold for **MAF_v** is set to be 0.05, the output for spn_1 with coefficient, P value and logliklihood information
+If the Model type is chosen to be **XCI** and threshold for **MAF_v** is set to be 0.05, the output for snp_1 with coefficient, P value and loglikelihood information
 
 ```{r eval=FALSE}
 Covars<-c("Age","Smoking","Treatment")
@@ -85,7 +85,7 @@ knitr::kable(output[1]$snp_1$loglik)
 
 ## 3.2 Select significant SNPs from all model type:
 
-If the Model type is chosen to be **all**  and threshold for **MAF_v** is set to be 0.1, the output for spn_1 with coefficient , P value and logliklihood information for **XCI-E**, **XCI** and **XCI-S** respectively,
+If the Model type is chosen to be **all**  and threshold for **MAF_v** is set to be 0.1, the output for snp_1 with coefficient , P value and log-likelihood function information for **XCI-E**, **XCI** and **XCI-S** respectively,
 
 ```{r eval=FALSE}
 Covars<-c("Age","Smoking","Treatment")
@@ -94,7 +94,7 @@ output<-xlink_fit(os="OS",ostime="OS_time",snps=SNPs,gender="gender",covars=Cova
 
 ```
 
-For XCI-E model, spn_1 with coefficient, P value and logliklihood information
+For XCI-E model, snp_1 with coefficient, P value and log-likelihood function information
 
 ```{r echo=FALSE, results='asis'}
 output<-xlink_fit(os="OS",ostime="OS_time",snps=SNPs,gender="gender",covars=Covars, option =list(MAF_v=0.1),model="survival",data = Rdata)
@@ -107,7 +107,7 @@ knitr::kable(output$snp_1$`XCI-E`$loglik)
 ```
 
 
-For XCI model, spn_1 with coefficient, P value and logliklihood information
+For XCI model, snp_1 with coefficient, P value and log-likelihood function information
 
 ```{r echo=FALSE, results='asis'}
 
@@ -118,7 +118,7 @@ knitr::kable(output$snp_1$`XCI`$loglik)
 ```
 
 
-For XCI-S model, spn_1 with coefficient , logliklihood information and **gamma** estimation
+For XCI-S model, snp_1 with coefficient , log-likelihood function information and **gamma** estimation
 
 ```{r echo=FALSE, results='asis'}
 
@@ -130,7 +130,7 @@ knitr::kable(output$snp_1$`XCI-S`$Gamma , col.names ="Gamma")
 
 ```
 
-The best model for spn_1 among model type XCI-E, XCI and XIC-S by using the AIC is 
+The best model for snp_1 among model type XCI-E, XCI and XCI-S by using the AIC is 
 
 ```{r echo=FALSE, results='asis'}
 

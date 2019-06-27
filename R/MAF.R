@@ -1,9 +1,9 @@
 #' Select SNP by MAF.
-#' 
-#' \code{MAF} returns SNPs with higher MAF than default value. 
-#' 
+#'
+#' \code{MAF} returns SNPs with higher MAF than default value.
+#'
 #' @param snp SNP name.
-#' @param gender gender vairable.
+#' @param gender gender variable.
 #' @param male male information.
 #' @param MAF_v minimum MAF value.
 #' @param data a dataset.

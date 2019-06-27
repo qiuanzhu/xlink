@@ -9,7 +9,7 @@ MAF(snp, gender, male, MAF_v, data)
 \arguments{
 \item{snp}{SNP name.}
 
-\item{gender}{gender vairable.}
+\item{gender}{gender variable.}
 
 \item{male}{male information.}
 

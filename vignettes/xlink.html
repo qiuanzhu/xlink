@@ -117,10 +117,10 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 </div>
 <div id="examples" class="section level1">
 <h1>3. Examples</h1>
-<p>In the following examples, we choose the <strong>model</strong> is “survival” model, which could also applied to “linear” model for coutinous response and “binary” for fitting logistic regression model.</p>
+<p>In the following examples, we choose the <strong>model</strong> is “survival” model, which could also applied to “linear” model for continuous response and “binary” for fitting logistic regression model.</p>
 <div id="select-significant-snps-from-xci-or-xci-e-model-type" class="section level2">
 <h2>3.1 Select significant SNPs from XCI or XCI-E model type:</h2>
-<p>In the sample data with 10 SNPs and 4 clinlic covariates,</p>
+<p>In the sample data with 10 SNPs and 4 clinic covariates,</p>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">library</span>(<span class="st">&quot;xlink&quot;</span>)
 <span class="kw">head</span>(Rdata)</code></pre></div>
 <table>
@@ -262,7 +262,7 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 </tr>
 </tbody>
 </table>
-<p>If the Model type is chosen to be <strong>XCI</strong> and threshold for <strong>MAF_v</strong> is set to be 0.05, the output for spn_1 with coefficient, P value and logliklihood information</p>
+<p>If the Model type is chosen to be <strong>XCI</strong> and threshold for <strong>MAF_v</strong> is set to be 0.05, the output for snp_1 with coefficient, P value and loglikelihood information</p>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">Covars&lt;-<span class="kw">c</span>(<span class="st">&quot;Age&quot;</span>,<span class="st">&quot;Smoking&quot;</span>,<span class="st">&quot;Treatment&quot;</span>)
 SNPs&lt;-<span class="kw">c</span>(<span class="st">&quot;snp_1&quot;</span>,<span class="st">&quot;snp_2&quot;</span>)
 output&lt;-<span class="kw">xlink_fit</span>(<span class="dt">os=</span><span class="st">&quot;OS&quot;</span>,<span class="dt">ostime=</span><span class="st">&quot;OS_time&quot;</span>,<span class="dt">snps=</span>SNPs,<span class="dt">gender=</span><span class="st">&quot;gender&quot;</span>,<span class="dt">covars=</span>Covars, <span class="dt">option =</span><span class="kw">list</span>(<span class="dt">type=</span><span class="st">&quot;XCI&quot;</span>,<span class="dt">MAF_v=</span><span class="fl">0.05</span>),<span class="dt">model=</span><span class="st">&quot;survival&quot;</span>,<span class="dt">data =</span> Rdata)</code></pre></div>
@@ -333,11 +333,11 @@ output&lt;-<span class="kw">xlink_fit</span>(<span class="dt">os=</span><span cl
 </div>
 <div id="select-significant-snps-from-all-model-type" class="section level2">
 <h2>3.2 Select significant SNPs from all model type:</h2>
-<p>If the Model type is chosen to be <strong>all</strong> and threshold for <strong>MAF_v</strong> is set to be 0.1, the output for spn_1 with coefficient , P value and logliklihood information for <strong>XCI-E</strong>, <strong>XCI</strong> and <strong>XCI-S</strong> respectively,</p>
+<p>If the Model type is chosen to be <strong>all</strong> and threshold for <strong>MAF_v</strong> is set to be 0.1, the output for snp_1 with coefficient , P value and log-likelihood function information for <strong>XCI-E</strong>, <strong>XCI</strong> and <strong>XCI-S</strong> respectively,</p>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">Covars&lt;-<span class="kw">c</span>(<span class="st">&quot;Age&quot;</span>,<span class="st">&quot;Smoking&quot;</span>,<span class="st">&quot;Treatment&quot;</span>)
 SNPs&lt;-<span class="kw">c</span>(<span class="st">&quot;snp_1&quot;</span>,<span class="st">&quot;snp_2&quot;</span>)
 output&lt;-<span class="kw">xlink_fit</span>(<span class="dt">os=</span><span class="st">&quot;OS&quot;</span>,<span class="dt">ostime=</span><span class="st">&quot;OS_time&quot;</span>,<span class="dt">snps=</span>SNPs,<span class="dt">gender=</span><span class="st">&quot;gender&quot;</span>,<span class="dt">covars=</span>Covars, <span class="dt">option =</span><span class="kw">list</span>(<span class="dt">type=</span><span class="st">&quot;all&quot;</span>,<span class="dt">MAF_v=</span><span class="fl">0.05</span>),<span class="dt">model=</span><span class="st">&quot;survival&quot;</span>,<span class="dt">data =</span> Rdata)</code></pre></div>
-<p>For XCI-E model, spn_1 with coefficient, P value and logliklihood information</p>
+<p>For XCI-E model, snp_1 with coefficient, P value and log-likelihood function information</p>
 <table>
 <thead>
 <tr class="header">
@@ -402,7 +402,7 @@ output&lt;-<span class="kw">xlink_fit</span>(<span class="dt">os=</span><span cl
 </tr>
 </tbody>
 </table>
-<p>For XCI model, spn_1 with coefficient, P value and logliklihood information</p>
+<p>For XCI model, snp_1 with coefficient, P value and log-likelihood function information</p>
 <table>
 <thead>
 <tr class="header">
@@ -467,7 +467,7 @@ output&lt;-<span class="kw">xlink_fit</span>(<span class="dt">os=</span><span cl
 </tr>
 </tbody>
 </table>
-<p>For XCI-S model, spn_1 with coefficient , logliklihood information and <strong>gamma</strong> estimation</p>
+<p>For XCI-S model, snp_1 with coefficient , log-likelihood function information and <strong>gamma</strong> estimation</p>
 <table>
 <thead>
 <tr class="header">
@@ -544,7 +544,7 @@ output&lt;-<span class="kw">xlink_fit</span>(<span class="dt">os=</span><span cl
 </tr>
 </tbody>
 </table>
-<p>The best model for spn_1 among model type XCI-E, XCI and XIC-S by using the AIC is</p>
+<p>The best model for snp_1 among model type XCI-E, XCI and XCI-S by using the AIC is</p>
 <table>
 <thead>
 <tr class="header">

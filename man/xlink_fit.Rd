@@ -36,8 +36,10 @@ It returns estimated parameters, confidence interval and P value for each variab
 \examples{
 Covars<-c("Age","Smoking","Treatment")
 SNPs<-c("snp_1","snp_2","snp_3")
-xlink_fit(os="OS",ostime="OS_time",snps=SNPs,gender="gender",covars=Covars,option =list(MAF_v=0.05),model="survival",data = Rdata)
-xlink_fit(resp="OS_time",snps=SNPs,gender="gender",option =list(type="XCI",MAF_v=0.05),model="linear",data = Rdata)
+xlink_fit(os="OS",ostime="OS_time",snps=SNPs,gender="gender",covars=Covars,
+          option =list(MAF_v=0.05),model="survival",data = Rdata)
+xlink_fit(resp="OS_time",snps=SNPs,gender="gender",option =list(type="XCI",MAF_v=0.05),
+          model="linear",data = Rdata)
 }
 \references{
 Xu, Wei, and Meiling Hao. 'A unified partial likelihood approach for X-chromosome association on time-to-event outcomes.' Genetic epidemiology 42.1 (2018): 80-94.

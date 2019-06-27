@@ -2,7 +2,7 @@
 % Please edit documentation in R/fit_XCI_model.R
 \name{fit_XCI_model}
 \alias{fit_XCI_model}
-\title{Model fitting results for each SNP considering as XCI tpye}
+\title{Model fitting results for each SNP considering as XCI type}
 \usage{
 fit_XCI_model(resp, os, ostime, snp, gender, male, female, covars, model,
   data)
@@ -32,7 +32,7 @@ fit_XCI_model(resp, os, ostime, snp, gender, male, female, covars, model,
 It returns estimated parameters, confidence interval and P value for each variable. Baseline model and full model maximum likelihood estimation are provided.
 }
 \description{
-\code{fit_XCI_model} returns model fitting results for each SNP undertanding as XCI type.
+\code{fit_XCI_model} returns model fitting results for each SNP understanding as XCI type.
 }
 \seealso{
 \code{\link{lm}{stats}} for linear model, \code{\link{glm}{stats}} for logistic regression model, and \code{\link{coxph}{survival}} for survival model.

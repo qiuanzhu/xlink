@@ -1,5 +1,5 @@
 Package: xlink
-Title: Genetic association models for X-chromosome SNPS on continuous, binary and survival outcomes
+Title: Genetic Association Models for X-Chromosome SNPS on Continuous, Binary and Survival Outcomes
 Version: 1.0.0
 Authors@R: c(
     person(given = "Wei",
@@ -14,10 +14,11 @@ Authors@R: c(
            family = "Zhu",
            role = c("cre"),
            email = "yizhu87@gmail.com"))
+Maintainer: Yi Zhu <yizhu87@gmail.com>
 Description: The expression of X-chromosome undergoes three possible biological processes: X-chromosome
              inactivation (XCI), escape of the X-chromosome inactivation (XCI-E),and skewed X-chromosome                    
-             inactivation (XCI-S). To analyze the X-linked genetic association for phentype such as                         
-             coninuous, binary, and timeto-event outcomeswith the actual process unknown, we propose a unified              
+             inactivation (XCI-S). To analyze the X-linked genetic association for phenotype such as                         
+             continuous, binary, and time-to-event outcomes with the actual process unknown, we propose a unified            
              approach of maximizing the likelihood or partial likelihood over all of the potential biological             
              processes.
 License: GPL-2

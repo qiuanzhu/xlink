@@ -2,7 +2,7 @@
 % Please edit documentation in R/fit_all_models.R
 \name{fit_all_models}
 \alias{fit_all_models}
-\title{Model fitting results for each SNP considering as XCI, XCI-E and XCI-S tpye}
+\title{Model fitting results for each SNP considering as XCI, XCI-E and XCI-S type}
 \usage{
 fit_all_models(resp, os, ostime, snp, gender, male, female, covars, model,
   data)
@@ -32,7 +32,7 @@ fit_all_models(resp, os, ostime, snp, gender, male, female, covars, model,
 It returns estimated parameters, confidence interval and P value for each variable. Baseline model and full model maximum likelihood estimation are provided.
 }
 \description{
-\code{fit_all_models} returns model fitting results for each SNP undertanding as XCI, XCI-E and XCI-S tpye resectively. Model comparison results is provided by using AIC as a criterion.
+\code{fit_all_models} returns model fitting results for each SNP understanding as XCI, XCI-E and XCI-S type respectively. Model comparison results is provided by using AIC as a criterion.
 }
 \seealso{
 \code{\link{lm}{stats}} for linear model, \code{\link{glm}{stats}} for logistic regression model, and \code{\link{coxph}{survival}} for survival model.
