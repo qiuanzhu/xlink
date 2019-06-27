@@ -3,6 +3,8 @@ title: "xlink"
 author: "Wei Xu, Meiling Hao, Yi Zhu"
 date: "`r Sys.Date()`"
 show_toc: true
+slug: xlink
+githubEditURL: https://github.com/qiuanzhu/xlink/blob/master/vignettes/xlink.Rmd
 output: 
      rmarkdown::html_vignette:
      toc: yes
