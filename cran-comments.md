@@ -12,8 +12,11 @@
 There was 1 note:
 
 Possibly mis-spelled words in DESCRIPTION:
-  Hao (26:70)
-  Meiling (26:62)
-  Xu (26:58)
+  Dongxiao (27:23)
+  Hao (26:70, 27:45)
+  Lianqiang (27:50)
+  Meiling (26:62, 27:37)
+  Qu (27:60)
+  Xu (26:58, 27:68)
 
 * Those are authors' names, which are identified as mis-spelled words. 

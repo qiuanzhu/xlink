@@ -1,6 +1,6 @@
 Package: xlink
 Title: Genetic Association Models for X-Chromosome SNPS on Continuous, Binary and Survival Outcomes
-Version: 1.0.0
+Version: 1.0.1
 Authors@R: c(
     person(given = "Wei",
            family = "Xu",
@@ -22,7 +22,8 @@ Description: The expression of X-chromosome undergoes three possible biological 
              inactivation (XCI-S). To analyze the X-linked genetic association for phenotype such as                         
              continuous, binary, and time-to-event outcomes with the actual process unknown, we propose a unified            
              approach of maximizing the likelihood or partial likelihood over all of the potential biological             
-             processes. The methods are described in Wei Xu, Meiling Hao (2017) <doi:10.1002/gepi.22097>.
+             processes. The methods are described in Wei Xu, Meiling Hao (2017) <doi:10.1002/gepi.22097>. And 
+             also see Dongxiao Han, Meiling Hao, Lianqiang Qu, Wei Xu (2019) <doi:10.1177/0962280219859037>.
 License: GPL-2
 Encoding: UTF-8
 LazyData: true

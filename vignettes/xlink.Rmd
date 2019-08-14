@@ -27,6 +27,8 @@ knitr::opts_chunk$set(
 ## Reference:
 > "Xu, Wei, and Meiling Hao. "A unified partial likelihood approach for X‐chromosome association on time‐to‐event outcomes." Genetic epidemiology 42.1 (2018): 80-94." ([via](https://onlinelibrary.wiley.com/doi/abs/10.1002/gepi.22097))
 
+> "Han, D., Hao, M., Qu, L., & Xu, W. (2019). ”A novel model for the X-chromosome inactivation association on survival data." Statistical Methods in Medical Research." 
+([via](https://www.ncbi.nlm.nih.gov/pubmed/31258049))
 
 # 2. Installation
 You can install **xlink** from [github]((https://github.com/qiuanzhu/xlink):
@@ -163,16 +165,3 @@ result<-xlink_fit(os="OS",ostime ="OS_time",snps=SNPs,gender ="gender",covars=Co
 knitr::kable( select_output(input=result,pv_thold=10^-5) )
 
 ```
-
-
-
-
-
-
-
-
-
-
-
-
-

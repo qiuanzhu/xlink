@@ -43,6 +43,8 @@ xlink_fit(resp="OS_time",snps=SNPs,gender="gender",option =list(type="XCI",MAF_v
 }
 \references{
 Xu, Wei, and Meiling Hao. 'A unified partial likelihood approach for X-chromosome association on time-to-event outcomes.' Genetic epidemiology 42.1 (2018): 80-94.
+
+Han, D., Hao, M., Qu, L., & Xu, W. (2019). A novel model for the X-chromosome inactivation association on survival data. Statistical Methods in Medical Research.
 }
 \seealso{
 \code{\link{lm}{stats}} for linear model, \code{\link{glm}{stats}} for logistic regression model, and \code{\link{coxph}{survival}} for survival model.
